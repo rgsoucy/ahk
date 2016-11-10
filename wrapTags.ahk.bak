@@ -1,0 +1,15 @@
+;wrap selection in <span style="color:red"></span>
+!~1::
+	OldClipboard := Clipboard
+	send, ^c
+	Clipboard := "<span style=""color:red"">" . Clipboard . "</span>"
+	send, ^v
+Return
+
+;wrap selection in <span style="color:blue"></span>
+!~2::
+	OldClipboard := Clipboard
+	send, ^c
+	Clipboard := "<span style=""color:blue"">" . Clipboard . "</span>"
+	send, ^v
+Return

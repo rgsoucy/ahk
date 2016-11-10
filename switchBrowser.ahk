@@ -1,0 +1,39 @@
+;Open Active webpage in explorer
+^+i::
+Send ^l       	;gives focus to the URL
+clipboard =  	; Start off empty to allow ClipWait to detect when the text has arrived.
+sleep, 200 ;wait .2 seconds
+Send ^c
+ClipWait  		; Wait for the clipboard to contain text.
+
+Run, iexplore.exe %clipboard% ; open Internet Explorer to active webpage
+
+return
+
+;Open Active webpage in chrome
+^+c::
+Send ^l       	;gives focus to the URL
+clipboard =  	; Start off empty to allow ClipWait to detect when the text has arrived.
+sleep, 200 ;wait .2 seconds
+Send ^c
+ClipWait  		; Wait for the clipboard to contain text.
+
+Run, chrome.exe %clipboard% ; open chrome to active webpage
+
+return
+
+;Open Active webpage in edge
+^+e::
+Send ^l       	;gives focus to the URL
+clipboard =  	; Start off empty to allow ClipWait to detect when the text has arrived.
+sleep, 200 ;wait .2 seconds
+Send ^c
+ClipWait  		; Wait for the clipboard to contain text.
+
+Run, microsoft-edge: %clipboard% ; open edge to active webpage
+
+return
+
+;check if running
+#m::
+MsgBox, 0, working, "Script is running", 20
